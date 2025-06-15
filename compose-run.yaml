@@ -1,0 +1,14 @@
+services:
+
+  fullspeed:
+    image: dday-old-vibes:4.4k
+    restart: always
+    volumes:
+      - ./fullspeed/maps:/usr/local/share/q2pro/dday/maps
+      - ./fullspeed/files:/home/ubuntu/.q2pro/dday
+    network_mode: host
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10M"
+        max-file: 100

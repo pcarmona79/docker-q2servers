@@ -1,0 +1,24 @@
+FROM q2proded:r3817
+
+ENV RELEASE="1.17.49-kmod"
+
+# download and compile
+RUN set -xe; \
+  apt-get update; \
+  apt-get install -y build-essential; \
+  export ARCH=$(uname -m); \
+  export Q2PROARCH=$(if [ \"aarch64\" = \"$ARCH\" ]; then echo "amd64"; else echo $ARCH; fi); \
+# download source form github
+  wget --no-check-certificate -O q2admin-kmod-src.tar.gz https://github.com/pcarmona79/q2admin-kmod/archive/refs/tags/${RELEASE}.tar.gz; \
+  tar -zxf q2admin-kmod-src.tar.gz; \
+  cd q2admin-kmod-${RELEASE}; \
+  make; \
+# rename game lib so we can place the q2admin lib instead
+  mv /usr/local/lib/${ARCH}-linux-gnu/q2pro/baseq2/game${Q2PROARCH}.so /usr/local/lib/${ARCH}-linux-gnu/q2pro/baseq2/game${Q2PROARCH}.real.so; \
+  cp game${ARCH}.so /usr/local/lib/${ARCH}-linux-gnu/q2pro/baseq2/game${ARCH}.so; \
+# remove compile files
+  rm -rf /tmp/q2admin-kmod-src.tar.gz /tmp/q2admin-kmod; \
+  apt-get purge -y build-essential; \
+  apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; \
+  apt-get autoremove; \
+  rm -rf /var/lib/apt/lists/*
