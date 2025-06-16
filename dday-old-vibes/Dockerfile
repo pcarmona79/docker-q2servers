@@ -7,7 +7,7 @@ RUN set -xe; \
   apt-get update; \
   apt-get install -y build-essential git; \
   export ARCH=$(uname -m); \
-  export Q2PROARCH=$(if [ \"aarch64\" = \"$ARCH\" ]; then echo "amd64"; else echo $ARCH; fi); \
+  export Q2PROARCH=$(if [ \"aarch64\" = \"$ARCH\" ]; then echo "arm64"; else echo $ARCH; fi); \
   wget --no-check-certificate -O dday-old-vibes-src.tar.gz https://github.com/pcarmona79/dday-old-vibes/archive/refs/tags/4.4k.tar.gz; \
   tar -zxf dday-old-vibes-src.tar.gz; \
   cd dday-old-vibes-${RELEASE}/src; \

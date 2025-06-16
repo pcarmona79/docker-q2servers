@@ -7,7 +7,7 @@ RUN set -xe; \
   apt-get update; \
   apt-get install -y build-essential; \
   export ARCH=$(uname -m); \
-  export Q2PROARCH=$(if [ \"aarch64\" = \"$ARCH\" ]; then echo "amd64"; else echo $ARCH; fi); \
+  export Q2PROARCH=$(if [ \"aarch64\" = \"$ARCH\" ]; then echo "arm64"; else echo $ARCH; fi); \
 # download source form github
   wget --no-check-certificate -O q2admin-kmod-src.tar.gz https://github.com/pcarmona79/q2admin-kmod/archive/refs/tags/${RELEASE}.tar.gz; \
   tar -zxf q2admin-kmod-src.tar.gz; \
