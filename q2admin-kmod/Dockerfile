@@ -17,7 +17,7 @@ RUN set -xe; \
   mv /usr/local/lib/${ARCH}-linux-gnu/q2pro/baseq2/game${Q2PROARCH}.so /usr/local/lib/${ARCH}-linux-gnu/q2pro/baseq2/game${Q2PROARCH}.real.so; \
   cp game${ARCH}.so /usr/local/lib/${ARCH}-linux-gnu/q2pro/baseq2/game${ARCH}.so; \
 # remove compile files
-  rm -rf /tmp/q2admin-kmod-src.tar.gz /tmp/q2admin-kmod; \
+  rm -rf /tmp/q2admin-kmod-src.tar.gz /tmp/q2admin-kmod-${RELEASE}; \
   apt-get purge -y build-essential; \
   apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; \
   apt-get autoremove; \
