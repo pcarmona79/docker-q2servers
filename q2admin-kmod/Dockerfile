@@ -14,8 +14,8 @@ RUN set -xe; \
   cd q2admin-kmod-${RELEASE}; \
   make; \
 # rename game lib so we can place the q2admin lib instead
-  mv /usr/local/lib/${ARCH}-linux-gnu/q2pro/baseq2/game${Q2PROARCH}.so /usr/local/lib/${ARCH}-linux-gnu/q2pro/baseq2/game${Q2PROARCH}.real.so; \
-  cp game${ARCH}.so /usr/local/lib/${ARCH}-linux-gnu/q2pro/baseq2/game${ARCH}.so; \
+  mv /usr/local/lib/${ARCH}-linux-gnu/q2pro/baseq2/game${Q2PROARCH}.so /usr/local/lib/${ARCH}-linux-gnu/q2pro/baseq2/game${ARCH}.real.so; \
+  cp game${ARCH}.so /usr/local/lib/${ARCH}-linux-gnu/q2pro/baseq2/game${Q2PROARCH}.so; \
 # remove compile files
   rm -rf /tmp/q2admin-kmod-src.tar.gz /tmp/q2admin-kmod-${RELEASE}; \
   apt-get purge -y build-essential; \
