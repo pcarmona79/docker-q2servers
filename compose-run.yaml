@@ -1,7 +1,7 @@
 services:
 
   fullspeed:
-    image: dday-old-vibes:4.4k
+    image: pcarmona/dday-old-vibes:4.4k
     restart: always
     volumes:
       - ./fullspeed/maps:/usr/local/share/q2pro/dday/maps

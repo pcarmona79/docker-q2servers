@@ -2,6 +2,8 @@ FROM q2proded:r3817
 
 ENV RELEASE="1.17.49-kmod"
 
+USER root
+
 # download and compile
 RUN set -xe; \
   apt-get update; \
@@ -22,3 +24,13 @@ RUN set -xe; \
   apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; \
   apt-get autoremove; \
   rm -rf /var/lib/apt/lists/*
+
+# default port for quake2 server
+EXPOSE 27910
+
+# change to ubuntu user to launch the server
+USER ubuntu
+
+# start the server
+WORKDIR /home/ubuntu/.q2pro/
+CMD ["+set", "game", "baseq2", "+exec", "server.cfg"]

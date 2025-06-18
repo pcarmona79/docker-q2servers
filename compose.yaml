@@ -6,7 +6,7 @@ services:
       context: ./q2proded
       platforms:
         - linux/amd64
-        - linux/arm64/v8
+        - linux/arm64
 
   q2admin-kmod:
     image: q2admin-kmod:1.17.49-kmod
@@ -14,7 +14,7 @@ services:
       context: ./q2admin-kmod
       platforms:
         - linux/amd64
-        - linux/arm64/v8
+        - linux/arm64
 
   dday-old-vibes:
     image: dday-old-vibes:4.4k
@@ -22,7 +22,7 @@ services:
       context: ./dday-old-vibes
       platforms:
         - linux/amd64
-        - linux/arm64/v8
+        - linux/arm64
 
   fullspeed:
     image: dday-old-vibes:4.4k

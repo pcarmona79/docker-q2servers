@@ -2,6 +2,8 @@ FROM q2admin-kmod:1.17.49-kmod
 
 ENV RELEASE="4.4k"
 
+USER root
+
 # compile and copy .so files to libdir directory where it will be found by q2admin
 RUN set -xe; \
   apt-get update; \
@@ -33,6 +35,9 @@ RUN set -xe; \
   apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; \
   apt-get autoremove; \
   rm -rf /var/lib/apt/lists/*
+
+# default port for quake2 server
+EXPOSE 27910
 
 # change to ubuntu user to launch the server
 USER ubuntu

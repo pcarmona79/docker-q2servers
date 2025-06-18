@@ -22,6 +22,13 @@ RUN set -xe; \
   apt-get autoremove; \
   rm -rf /var/lib/apt/lists/*
 
-# files are installed by default in /usr/local
-WORKDIR /usr/local/share/q2pro/
+# default port for quake2 server
+EXPOSE 27910
+
+# change to ubuntu user to launch the server
+USER ubuntu
+
+# start a basic server
+WORKDIR /home/ubuntu/.q2pro/
 ENTRYPOINT ["/usr/local/bin/q2proded", "+set", "sys_console", "1"]
+CMD ["+set", "game", "baseq2"]
