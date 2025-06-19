@@ -23,7 +23,7 @@ RUN set -xe; \
   rm -rf /var/lib/apt/lists/*
 
 # default port for quake2 server
-EXPOSE 27910
+EXPOSE 27910/udp
 
 # change to ubuntu user to launch the server
 USER ubuntu
