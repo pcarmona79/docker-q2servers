@@ -7,7 +7,7 @@ USER root
 # download and compile
 RUN set -xe; \
   apt-get update; \
-  apt-get install -y build-essential; \
+  apt-get install -y gcc libc6-dev make; \
   export ARCH=$(uname -m); \
   export Q2PROARCH=$(if [ \"aarch64\" = \"$ARCH\" ]; then echo "arm64"; else echo $ARCH; fi); \
 # download source form github
@@ -20,7 +20,7 @@ RUN set -xe; \
   cp game${ARCH}.so /usr/local/lib/${ARCH}-linux-gnu/q2pro/baseq2/game${Q2PROARCH}.so; \
 # remove compile files
   rm -rf /tmp/q2admin-kmod-src.tar.gz /tmp/q2admin-kmod-${RELEASE}; \
-  apt-get purge -y build-essential; \
+  apt-get purge -y gcc libc6-dev make; \
   apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; \
   apt-get autoremove; \
   rm -rf /var/lib/apt/lists/*

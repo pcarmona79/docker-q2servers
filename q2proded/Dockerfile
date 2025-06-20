@@ -7,7 +7,7 @@ WORKDIR /tmp/q2proded
 # install required software
 RUN set -xe; \
   apt-get update; \
-  apt-get install -y build-essential zlib1g zlib1g-dev python3 ninja-build meson wget; \
+  apt-get install -y gcc libc6-dev zlib1g zlib1g-dev ninja-build meson wget; \
 # download and compile q2proded
   wget --no-check-certificate https://github.com/skullernet/q2pro/releases/download/nightly/q2pro-source.tar.gz; \
   tar zxf q2pro-source.tar.gz; \
@@ -17,7 +17,7 @@ RUN set -xe; \
   ninja -C builddir install; \
 # remove all installed files
   rm -rf /tmp/q2proded; \
-  apt-get purge -y build-essential zlib1g-dev python3 ninja-build meson; \
+  apt-get purge -y gcc libc6-dev zlib1g-dev python3 ninja-build meson; \
   apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; \
   apt-get autoremove; \
   rm -rf /var/lib/apt/lists/*

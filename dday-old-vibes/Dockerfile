@@ -7,7 +7,7 @@ USER root
 # compile and copy .so files to libdir directory where it will be found by q2admin
 RUN set -xe; \
   apt-get update; \
-  apt-get install -y build-essential git; \
+  apt-get install -y gcc libc6-dev make git; \
   export ARCH=$(uname -m); \
   export Q2PROARCH=$(if [ \"aarch64\" = \"$ARCH\" ]; then echo "arm64"; else echo $ARCH; fi); \
   wget --no-check-certificate -O dday-old-vibes-src.tar.gz https://github.com/pcarmona79/dday-old-vibes/archive/refs/tags/${RELEASE}.tar.gz; \
@@ -31,7 +31,7 @@ RUN set -xe; \
   cp /usr/local/lib/${ARCH}-linux-gnu/q2pro/baseq2/game${Q2PROARCH}.so /usr/local/lib/${ARCH}-linux-gnu/q2pro/dday/; \
 # remove compile files
   rm -rf /tmp/dday-old-vibes-src.tar.gz /tmp/dday-old-vibes-${RELEASE}; \
-  apt-get purge -y git build-essential git; \
+  apt-get purge -y gcc libc6-dev make git; \
   apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; \
   apt-get autoremove; \
   rm -rf /var/lib/apt/lists/*
