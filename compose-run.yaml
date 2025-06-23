@@ -1,7 +1,7 @@
 services:
 
   fullspeed:
-    image: pcarmona/dday-old-vibes:4.4k
+    image: pcarmona/dday-old-vibes:latest
     restart: always
     volumes:
       - ./fullspeed/maps:/usr/local/share/q2pro/dday/maps
@@ -16,7 +16,7 @@ services:
         max-file: 100
 
   dday5-server:
-    image: ddaycl-dll:5.04
+    image: pcarmona/ddaycl-dll:latest
     restart: always
     volumes:
       - ./dday5-server/maps:/usr/local/share/q2pro/dday/maps
