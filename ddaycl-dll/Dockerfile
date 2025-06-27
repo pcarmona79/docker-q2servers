@@ -1,6 +1,6 @@
 FROM q2admin-kmod:1.17.49-kmod
 
-ENV RELEASE="5.04-k2"
+ENV RELEASE="5.04-k3"
 
 USER root
 
