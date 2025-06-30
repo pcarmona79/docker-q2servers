@@ -25,7 +25,7 @@ services:
         - linux/arm64
 
   ddaycl-dll:
-    image: ddaycl-dll:5.04-k3
+    image: ddaycl-dll:5.04-k4
     build:
       context: ./ddaycl-dll
       platforms:
@@ -48,7 +48,7 @@ services:
         max-file: 100
 
   dday5-server:
-    image: ddaycl-dll:5.04-k3
+    image: ddaycl-dll:5.04-k4
     restart: always
     volumes:
       - ./dday5-server/maps:/usr/local/share/q2pro/dday/maps
