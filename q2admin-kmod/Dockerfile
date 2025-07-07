@@ -1,6 +1,6 @@
 FROM q2proded:r3817
 
-ENV RELEASE="1.17.49-kmod"
+ENV RELEASE="1.17.50-kmod"
 
 USER root
 
