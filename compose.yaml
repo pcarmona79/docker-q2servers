@@ -32,6 +32,14 @@ services:
         - linux/amd64
         - linux/arm64
 
+  ddaychile-release:
+    image: ddaychile-release:5.041
+    build:
+      context: ./ddaychile-release
+      platforms:
+        - linux/amd64
+        - linux/arm64
+
   fullspeed:
     image: dday-old-vibes:4.4k-1
     restart: always
