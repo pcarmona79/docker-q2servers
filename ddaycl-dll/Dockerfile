@@ -1,4 +1,4 @@
-FROM q2admin-kmod:1.17.49-kmod
+FROM q2admin-kmod:1.17.50-kmod
 
 ENV RELEASE="5.04-k4"
 
