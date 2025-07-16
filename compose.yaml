@@ -33,7 +33,7 @@ services:
         - linux/arm64
 
   ddaychile-release:
-    image: ddaychile-release:5.041
+    image: ddaychile-release:5.041-1
     build:
       context: ./ddaychile-release
       platforms:
