@@ -3,6 +3,7 @@ FROM q2proded:r3817
 ENV RELEASE="1.17.50-kmod"
 
 USER root
+WORKDIR /tmp/
 
 # download and compile
 RUN set -xe; \

@@ -3,6 +3,7 @@ FROM q2admin-kmod:1.17.50-kmod
 ENV RELEASE="5.042"
 
 USER root
+WORKDIR /tmp/
 
 # compile and copy .so files to libdir directory where it will be found by q2admin
 RUN set -xe; \
