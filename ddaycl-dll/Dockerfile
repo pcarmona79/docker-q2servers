@@ -23,7 +23,7 @@ RUN set -xe; \
 # copy q2admin from baseq2
   cp /usr/local/lib/${ARCH}-linux-gnu/q2pro/baseq2/game${Q2PROARCH}.so /usr/local/lib/${ARCH}-linux-gnu/q2pro/dday/; \
 # remove compile files
-  rm -rf /tmp/ddaycl-dll-src.tar.gz /tmp/ddaycl-dll; \
+  rm -rf /tmp/ddaycl-dll-src.tar.gz /tmp/ddaycl-dll-${RELEASE}; \
   apt-get purge -y gcc libc6-dev make; \
   apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; \
   apt-get autoremove; \
