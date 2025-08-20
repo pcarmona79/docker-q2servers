@@ -1,6 +1,6 @@
 FROM q2admin-kmod:1.17.50-kmod
 
-ENV RELEASE="4.4k-1"
+ENV RELEASE="4.5k"
 
 USER root
 WORKDIR /tmp/
