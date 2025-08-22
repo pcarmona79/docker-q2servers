@@ -25,7 +25,7 @@ services:
         - linux/arm64
 
   ddaycl-dll:
-    image: ddaycl-dll:5.044
+    image: ddaycl-dll:5.045
     build:
       context: ./ddaycl-dll
       platforms:
@@ -33,7 +33,7 @@ services:
         - linux/arm64
 
   ddaychile-release:
-    image: ddaychile-release:5.044
+    image: ddaychile-release:5.045
     build:
       context: ./ddaychile-release
       platforms:
