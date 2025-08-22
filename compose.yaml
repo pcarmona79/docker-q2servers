@@ -17,7 +17,7 @@ services:
         - linux/arm64
 
   dday-old-vibes:
-    image: dday-old-vibes:4.5k
+    image: dday-old-vibes:4.5k-1
     build:
       context: ./dday-old-vibes
       platforms:
