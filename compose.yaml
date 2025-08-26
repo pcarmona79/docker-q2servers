@@ -32,6 +32,14 @@ services:
         - linux/amd64
         - linux/arm64
 
+  ddaycl-dll-gdb:
+    image: ddaycl-dll:5.045-gdb
+    build:
+      context: ./ddaycl-dll-gdb
+      platforms:
+        - linux/amd64
+        - linux/arm64
+
   ddaychile-release:
     image: ddaychile-release:5.045
     build:
