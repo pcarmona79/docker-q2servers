@@ -33,7 +33,7 @@ services:
         - linux/arm64
 
   ddaycl-dll-gdb:
-    image: ddaycl-dll:5.046-gdb2
+    image: ddaycl-dll:5.046-gdb3
     build:
       context: ./ddaycl-dll-gdb
       platforms:
