@@ -41,7 +41,7 @@ services:
         - linux/arm64
 
   ddaychile-release:
-    image: ddaychile-release:5.045
+    image: ddaychile-release:5.046
     build:
       context: ./ddaychile-release
       platforms:
