@@ -16,6 +16,14 @@ services:
         - linux/amd64
         - linux/arm64
 
+  q2admin-kmod-gdb:
+    image: q2admin-kmod:1.17.51-kmod-gdb
+    build:
+      context: ./q2admin-kmod-gdb
+      platforms:
+        - linux/amd64
+        - linux/arm64
+
   dday-old-vibes:
     image: dday-old-vibes:4.5k-2
     build:
@@ -33,7 +41,7 @@ services:
         - linux/arm64
 
   ddaycl-dll-gdb:
-    image: ddaycl-dll:5.046-gdb3
+    image: ddaycl-dll:5.047-gdb1
     build:
       context: ./ddaycl-dll-gdb
       platforms:
