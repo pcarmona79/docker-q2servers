@@ -9,7 +9,7 @@ services:
         - linux/arm64
 
   q2admin-kmod:
-    image: q2admin-kmod:1.17.50-kmod
+    image: q2admin-kmod:1.17.51-kmod
     build:
       context: ./q2admin-kmod
       platforms:

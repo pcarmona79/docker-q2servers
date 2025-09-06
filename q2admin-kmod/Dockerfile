@@ -1,6 +1,6 @@
 FROM q2proded:r3832
 
-ENV RELEASE="1.17.50-kmod"
+ENV RELEASE="1.17.51-kmod"
 
 USER root
 WORKDIR /tmp/
