@@ -1,6 +1,6 @@
 FROM q2admin-kmod:1.17.51-kmod-gdb
 
-ENV RELEASE="5.047-gdb2"
+ENV RELEASE="5.048-gdb1"
 
 USER root
 WORKDIR /tmp/
