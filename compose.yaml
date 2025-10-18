@@ -25,7 +25,7 @@ services:
         - linux/arm64
 
   dday-old-vibes:
-    image: dday-old-vibes:4.5k-2
+    image: dday-old-vibes:4.6k
     build:
       context: ./dday-old-vibes
       platforms:
@@ -57,7 +57,7 @@ services:
         - linux/arm64
 
   fullspeed:
-    image: dday-old-vibes:4.4k-1
+    image: dday-old-vibes:latest
     restart: always
     volumes:
       - ./fullspeed/maps:/usr/local/share/q2pro/dday/maps
@@ -72,7 +72,7 @@ services:
         max-file: 100
 
   dday5-server:
-    image: ddaycl-dll:5.04-k4
+    image: ddaycl-dll:latest
     restart: always
     volumes:
       - ./dday5-server/maps:/usr/local/share/q2pro/dday/maps
